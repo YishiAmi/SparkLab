@@ -1,0 +1,9 @@
+{
+  "name": "harvestmind",
+  "version": "1.0.0",
+  "description": "Decision Intelligence for Farmers",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  }
+}
