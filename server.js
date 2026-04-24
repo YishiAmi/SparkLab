@@ -3,8 +3,8 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const API_KEY = process.env.API_KEY;
-const PORT = 3000;
+const API_KEY = process.env.API_KEY || 'sk-1e62b2af96acebc251e20c569c114ef9d5697af44517f9b4';
+const PORT = process.env.PORT || 3000;
 
 const MIME_TYPES = {
   '.html': 'text/html',
@@ -14,7 +14,6 @@ const MIME_TYPES = {
 };
 
 const server = http.createServer((req, res) => {
-  // CORS headers
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -74,9 +73,9 @@ const server = http.createServer((req, res) => {
     return;
   }
 
-  // ── Serve static files ──
+  // ── Serve static files from root (__dirname) ──
   let filePath = req.url === '/' ? '/index.html' : req.url;
-  filePath = path.join(__dirname, 'public', filePath);
+  filePath = path.join(__dirname, filePath);
 
   fs.readFile(filePath, (err, content) => {
     if (err) {
