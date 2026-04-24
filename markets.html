@@ -85,7 +85,12 @@
     .header-nav { display: none; }
     .mobile-menu-btn { display: flex; }
     .glm-tag { display: none; }
-    .icon-btn { width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; }
+    .icon-btn {
+    width: 30px; height: 30px; border: 1px solid var(--border);
+    background: transparent; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    color: var(--ink-soft); transition: all 0.2s; flex-shrink: 0;
+  }
     .page { padding: 36px 18px; }
     .trend-bar { display: none; }
   } .header-nav { display: none; } .page { padding: 36px 18px; } .trend-bar { display: none; } }
