@@ -3,7 +3,7 @@ const https = require('https');
 const fs = require('fs');
 const path = require('path');
 
-const API_KEY = process.env.API_KEY || 'sk-1e62b2af96acebc251e20c569c114ef9d5697af44517f9b4';
+const API_KEY = process.env.API_KEY || 'your_api_key_here_>:D';
 const PORT = process.env.PORT || 3000;
 
 const MIME_TYPES = {
